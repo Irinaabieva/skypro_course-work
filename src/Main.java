@@ -38,7 +38,7 @@ public class Main {
     //   3. Найти сотрудника с минимальной зарплатой.
     public static String getEmployeeWithMinSalary(Employee[] employees) {
         String result = "";
-        int minSalary = 100000;
+        int minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < minSalary) {
                 minSalary = employees[i].getSalary();
@@ -51,7 +51,7 @@ public class Main {
     //    4. Найти сотрудника с максимальной зарплатой.
     public static String getEmployeeWithMaxSalary(Employee[] employees) {
         String result = "";
-        int maxSalary = 0;
+        int maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > maxSalary) {
                 maxSalary = employees[i].getSalary();
@@ -63,8 +63,7 @@ public class Main {
 
     //    5. Подсчитать среднее значение зарплат (можно использовать для этого метод из пункта b).
     public static int getAverageSalary(Employee[] employees) {
-        int result = getSumSalaryOnMonth(employees) / employees.length;
-        return result;
+        return getSumSalaryOnMonth(employees) / employees.length;
     }
 
     //    Получить Ф. И. О. всех сотрудников (вывести в консоль).
