@@ -23,6 +23,8 @@ public class Main {
         System.out.println(getSumSalaryInDepartment("ФИН"));
         System.out.println(getAverageSalaryInDepartment("ФИН"));
         printIndexSalary(3);
+        printEmployeesLessCount(50_000);
+        printEmployeesMoreCount(20_000);
     }
 
 
@@ -155,5 +157,23 @@ public class Main {
         }
         return getSumSalaryInDepartment(department) / sum;
     }
+//     Получить в качестве параметра число и найти:
+//            1. Всех сотрудников с зарплатой меньше числа (вывести id, Ф. И. О. и зарплатой в консоль).
 
+    public static void printEmployeesLessCount(int count) {
+        for (Employee employee : arr) {
+            if (count > employee.getSalary()) {
+                System.out.println(employee.toString());
+            }
+        }
+    }
+
+    //    Всех сотрудников с зарплатой больше (или равно) числа (вывести id, Ф. И. О. и зарплатой в консоль).
+    public static void printEmployeesMoreCount(int count) {
+        for (Employee employee : arr) {
+            if (count < employee.getSalary()) {
+                System.out.println(employee.toString());
+            }
+        }
+    }
 }
